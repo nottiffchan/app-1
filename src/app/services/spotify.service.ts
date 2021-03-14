@@ -10,7 +10,8 @@ export class SpotifyService {
 
   private baseUrl = 'https://api.spotify.com/v1'
   private client_id = environment.CLIENT_ID;
-  private redirect_uri = 'http://localhost:4200/name-input';
+  // private redirect_uri = 'http://localhost:4200/name-input';
+  private redirect_uri = 'https://v-ibing.herokuapp.com/name-input';
   stateKey = 'spotify_auth_state';
 
   constructor(private http: HttpClient) { }
