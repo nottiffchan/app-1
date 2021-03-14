@@ -8,7 +8,7 @@ const port = process.env.PORT || 8888;
 server.use(express.static('./dist/vibing'));
 
 server.get('*', function(request, response) {
-  response.sendFile(path.join(__dirname, './dist/vibing/index.html'));
+  response.sendFile(path.join(__dirname, '/dist/vibing/index.html'));
 });
 
 server.listen(port, () => console.log(`Server started at port ${port}!`));
