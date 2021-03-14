@@ -1,43 +1,32 @@
-/* .container {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  margin-top: 8%;
-  font-size: 50px;
-  font-family: 'Abhaya Libre', serif;
-  font-size: 50px;
-} */
-
 .container {
-  margin-top: 8%;
-}
-
-.centralised {
-  display: flex;
+  height: 100vh;
+  justify-content: space-evenly;
   align-items: center;
-  justify-content: center;
+  flex-direction: column;
 }
-
 
 .title {
-  font-size: 50px;
-  margin-bottom: 7%;
+  font-size: 4rem;
+  font-family: 'Abhaya Libre';
+  line-height: 90%;
+  text-align: center;
 }
 
 .play-btn {
-  font-family: 'Abhaya Libre', serif;
-  font-size: 20px;
-  /* margin-top: 130px; */
-  margin: auto;
-  margin-left: auto;
+  display: flex;
+  font-family: 'Abhaya Libre';
   padding: 5px 20px;
-  /* margin-bottom: 120px; */
+  font-size: 20px;
+  align-items: center;
+  justify-content: space-evenly;
+}
+
+.play-btn:hover {
+  background-color: #424242;
 }
 
 .restart-button {
   font-size: 30px;
-  margin-top: 100px;
 }
 
 .play-icon, .restart-icon {
@@ -45,9 +34,11 @@
   margin-right: 10px;
 }
 
-a:visited {color:#000000;}
-
-#res-img {
-  height: 150px;
-  width: 150px;
+@media only screen and (max-width: 576px) {
+  .title {
+    font-size: 3rem;
+  }
+  .playlist-info {
+    margin-bottom: 5%;
+  }
 }

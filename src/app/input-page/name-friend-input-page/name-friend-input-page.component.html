@@ -1,0 +1,14 @@
+<div class="container d-flex">
+  <h1 class="question">Who are you vibing with?</h1>
+  <div class="input-group mb-5">
+    <input type="text" [(ngModel)]="secondname" (ngModelChange)="change($event)" class="form-control no-border" placeholder="Your name here..." aria-label="Name" autofocus>
+  </div>
+
+  <div [class.show]="submitButtonAppear" class="hidden">
+    <button mat-raised-button
+      color="primary"
+      class="submit-btn"
+      (click)="onSubmit()"
+    >Continue</button>
+  </div>
+</div>

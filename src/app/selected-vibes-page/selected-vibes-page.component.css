@@ -1,32 +1,57 @@
 .container {
   margin-top: 8%;
+  flex-direction: column;
 }
 
 .title {
   font-size: 50px;
+  text-align: center;
   margin-bottom: 8%;
+  line-height: 90%;
 }
 
-.centralise {
-  display: flex;
-  align-items: center;
-  justify-content: center;
+.track-row {
+  padding: 0 20px;
 }
 
-.btn-div {
-  display: flex;
-  /* flex-direction: column; */
-  justify-content: center;
-  align-items: center;
-}
-
-.submit-btn {
+.btn {
+  box-shadow: 0px 3px 1px -2px rgb(0 0 0 / 20%), 0px 2px 2px 0px rgb(0 0 0 / 14%), 0px 1px 5px 0px rgb(0 0 0 / 12%);
+  border-radius: 4px;
   font-family: 'Abhaya Libre', serif;
   font-size: 20px;
   padding: 5px 50px;
+  margin: 15px;
+}
+
+.pri {
+  color: white;
+  background-color: #212121;
+}
+
+.sec {
+  color: #212121;
+  background-color: transparent;
+  border: solid 2px #212121;
 }
 
 .btn-row {
-  margin-top: 5%;
+  flex-direction: row-reverse;
 }
 
+@media only screen and (min-width: 1200px) {
+  .track-row {
+    padding-left: 160px;
+  }
+}
+
+@media only screen and (min-width: 1000px) and (max-width: 1199px) {
+  .track-row {
+    padding-left: 115px;
+  }
+}
+
+@media only screen and (max-width: 576px) {
+  .btn-row {
+    flex-direction: column;
+  }
+}

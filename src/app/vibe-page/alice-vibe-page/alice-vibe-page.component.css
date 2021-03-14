@@ -1,0 +1,170 @@
+.container {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  font-size: 50px;
+  font-family: 'Abhaya Libre', serif;
+}
+
+.title {
+  font-size: 50px;
+  margin-bottom: 1%;
+}
+
+.form-container {
+  font-size: 16px;
+  width: 60%;
+  max-width: 500px;
+}
+
+.input {
+  font-family: 'Roboto Mono', monospace;
+  margin-bottom: 0;
+  width: 500px;
+
+}
+
+.form-control {
+  border-top: 2px black solid;
+  border-left: none;
+  border-bottom: 2px black solid;
+  border-right: 2px black solid;
+  border-radius: 0 9px 9px 0;
+}
+
+input:focus {
+  outline: none;
+  outline-width: 0;
+}
+
+.input-group-text {
+  border-top: 2px black solid;
+  border-left: 2px black solid;
+  border-bottom: 2px black solid;
+  border-radius: 9px 0 0 9px;
+  background: none;
+}
+
+.input-icon {
+  font-size: 0.9rem;
+}
+
+.input-field {
+  border: 2px solid black;
+  border-radius: 10px;
+  padding: 5px 15px;
+  width: 100%;
+  text-align: center;
+}
+
+.track-square {
+  height: 130px;
+  width: 130px;
+  border: 4px #aca4a4 solid;
+  margin: 5% 5%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.row {
+  display: flex;
+  flex-basis: 33%;
+  justify-content: center;
+  align-items: center;
+}
+
+.track-label {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-top: 40%;
+  font-size: 14px;
+  color: #605959;
+  font-family: 'Roboto Mono', monospace;
+}
+
+.bin-icon {
+  opacity: 0;
+  position: relative;
+  z-index: 999;
+  bottom: 87px;
+}
+
+.submit-btn {
+  font-family: 'Abhaya Libre', serif;
+  font-size: 20px;
+  padding: 5px 50px;
+}
+
+.btn-div {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+/*
+::ng-deep .mat-form-field-underline {
+  display: none;
+} */
+
+.selected-track-img {
+  height: 130px;
+  width: 130px;
+  margin-bottom: 10px;
+  cursor: pointer;
+}
+
+.selected-track-img:hover {
+  opacity: 30%;
+}
+
+.search-result-container {
+  width: 60%;
+  height: 300px;
+  overflow-y: auto;
+  background-color: #E4E4E4;
+}
+
+.track-wrapper {
+  display: flex;
+  padding: 8px 25px;
+  align-items: center;
+  cursor: pointer;
+}
+
+.track-wrapper:hover {
+  background-color: #DBD8D8;
+}
+
+.album-img {
+  margin-right: 25px;
+  width: 90px;
+}
+
+@media only screen and (max-width: 767px) {
+  .album-img {
+    width: 60px;
+  }
+  .track-name {
+    font-size: 16px;
+    margin-bottom: 5px;
+  }
+
+  .artist-name {
+    font-size: 16px;
+  }
+}
+
+@media only screen and (max-width: 540px) {
+  .search-result-container {
+    width: 320px;
+  }
+
+  .input-field {
+    width: 300px;
+  }
+}

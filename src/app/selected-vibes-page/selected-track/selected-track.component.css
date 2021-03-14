@@ -1,13 +1,10 @@
 .track {
   padding: 10px 15px;
-  height: 80px;
-  width: 250px;
-  /* border: 1px solid #c4c4c4; */
 }
 
 .album-art {
-  height: 60px;
-  width: 60px;
+  height: 100px;
+  width: 100px;
 }
 
 #name {
@@ -25,4 +22,14 @@
 
 .co {
   margin: 0 0px;
+}
+
+@media only screen and (max-width: 767px) {
+  #name {
+    text-align: center;
+  }
+
+  #artist {
+    text-align: center;
+  }
 }

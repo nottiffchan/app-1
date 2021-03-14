@@ -1,0 +1,56 @@
+<div class="container d-flex">
+  <div class="title">{{ firstname }}'s Vibe</div>
+
+  <div class="form-container mt-4">
+    <div class="input-group">
+      <div class="input-group-prepend">
+        <span class="input-group-text" id="basic-addon1">
+          <fa-icon [icon]="faSearch" class="input-icon"></fa-icon>
+        </span>
+      </div>
+      <input type="text" class="form-control" [(ngModel)]="trackNameSearched" (ngModelChange)="change($event)"placeholder="Choose tracks" aria-label="Username" aria-describedby="basic-addon1">
+    </div>
+  </div>
+
+  <div class="search-result-container" *ngIf="searchResults.length > 0 && trackNameSearched !== ''">
+    <div *ngFor="let track of searchResults" class="track-wrapper" (click)="selectTrack(track)">
+      <img class="album-img" [src]="track.album.images[1].url" alt="album art">
+      <div style="word-wrap: break-word;">
+        <p class="track-name">{{track.name}}</p>
+        <p class="artist-name" style="color: #605959; margin-bottom: 0;">{{track.artists[0].name}}</p>
+      </div>
+    </div>
+  </div>
+
+  <div *ngIf="searchResults.length === 0 || trackNameSearched === ''" class="row d-flex mt-5" style="align-items: flex-start; width: 100%; max-width: 600px;">
+    <div class="col-sm-6 d-flex justify-content-center align-items-center">
+      <div class="track-square" *ngIf="selectedTracks[0].trackId === ''">
+        <p class="track-label">TRACK 1</p>
+      </div>
+      <div class="track-square" [ngStyle]="{'border': 'none', 'height': 'auto'}" (click)="removeSelected(0)" *ngIf="selectedTracks[0].trackId !== ''">
+        <img class="selected-track-img" [src]="selectedTracks[0].img">
+        <p style="font-size: 19px;">{{selectedTracks[0].trackName}}</p>
+        <p style="color: #605959; margin-bottom: 0; font-size: 15px;">{{selectedTracks[0].artistName}}</p>
+      </div>
+    </div>
+
+    <div class="col-sm-6 d-flex justify-content-center align-items-center">
+      <div class="track-square" *ngIf="selectedTracks[1].trackId === ''">
+        <p class="track-label">TRACK 2</p>
+      </div>
+      <div  class="track-square" [ngStyle]="{'border': 'none', 'height': 'auto'}" (click)="removeSelected(1)" *ngIf="selectedTracks[1].trackId !== ''">
+        <img class="selected-track-img" [src]="selectedTracks[1].img">
+        <p style="font-size: 19px;">{{selectedTracks[1].trackName}}</p>
+        <p style="color: #605959; margin-bottom: 0; font-size: 15px;">{{selectedTracks[1].artistName}}</p>
+      </div>
+    </div>
+
+  </div>
+
+  <div [hidden]="selectedTracks[0].trackId === '' || selectedTracks[1].trackId === ''" class="btn-div" style="margin-top: 10px;">
+    <button mat-raised-button color="primary" class="submit-btn" (click)="onContinue()">Continue</button>
+  </div>
+
+</div>
+
+

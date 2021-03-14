@@ -1,39 +1,25 @@
-<div class="container">
-  <div class="row justify-content-md-center">
-    <div class="title">
-      Here's your playlist.
+<div class="container d-flex" >
+  <h1 class="title">Here's your playlist.</h1>
+  <div class="row align-items-center">
+    <div class="col-sm-6 d-flex justify-content-center align-items-center playlist-info" style="flex-direction: column;">
+      <img [src]="imgUrl" alt="" style="height: 150px; width: 150px;">
+      <p style="font-family: 'Roboto Mono'; font-size: 18px; text-align: center; margin-top: 20px">{{playlistName}}</p>
     </div>
-  </div>
 
-  <div class="row justify-content-md-center">
-    <div class="col-2"></div>
-    <div class="col-4 centralised">
-      <img id="res-img" src="../../assets/images/result-playlist-cover.jpg" alt="">
-    </div>
-    <div class="col-4 centralised">
-      <button mat-raised-button color="primary" class="play-btn">
-        <img src="../../assets/images/play-button.svg" alt="play button" class="play-icon">
-        Listen on Spotify
+    <div class="col-sm-6">
+      <button mat-raised-button color="primary" class="play-btn mx-auto">
+        <a target="_blank" [href]="playlistUrl" style="color: white; text-decoration: none;">
+          <img src="../../assets/headphones.svg" alt="play button" class="play-icon">
+          Listen on Spotify
+        </a>
       </button>
     </div>
-    <div class="col-2"></div>
   </div>
 
-  <div class="row" style="margin-top: 3%; margin-left: 30px;">
-    <div class="col-2"></div>
-    <div class="col-10">
-      <div style="font-family: 'Roboto Mono', serif; font-size: 18px;">vibing with alice and bob</div>
-
+  <a href="/" style="font-size: 27px; color: black; text-decoration: none;">
+    <div class="d-flex align-items-center">
+      <img src="../../assets/rotate-ccw.svg" alt="restart button" class="restart-icon">
+      <p style="margin-bottom: 0;">Start Again</p>
     </div>
-  </div>
-
-  <div class="row justify-content-md-center">
-    <a href="/" class="restart-button">
-      <img src="../../assets/images/update-arrow.svg" alt="restart button" class="restart-icon">
-      Start Again
-    </a>
-  </div>
-
-
-
+  </a>
 </div>
