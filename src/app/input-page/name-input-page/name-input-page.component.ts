@@ -12,10 +12,6 @@ export class NameInputPageComponent {
 
   ngOnInit() {
     this.token = this.spotifySrv.getToken();
-
-    if (this.token === '' || !this.token) {
-      this.router.navigate(['/error']);
-    }
   }
 
   constructor(
