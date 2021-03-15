@@ -1,5 +1,6 @@
 # vibing.
-A web app created for Hack&Roll 2021, an annual 24-hour hackathon organised by NUS Hackers.
+A web app created for Hack&Roll 2021, an annual 24-hour hackathon organised by NUS Hackers.<br>
+Check it out here! https://v-ibing.herokuapp.com
 
 ## Inspiration
 We are a group of friends that enjoy listening to music, and we like to share our new discoveries with one another. However, this doesn't always end well because we have different tastes. During a road trip with a friend, we we were arguing over what music to play. Then it hit us. How good would it be, to have an app that uses the songs each of us likes to automatically generate a playlist which would contain songs we all like?
