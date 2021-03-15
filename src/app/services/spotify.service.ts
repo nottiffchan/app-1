@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { environment } from '../../environments/environment'
+import { Router } from '@angular/router';
 
 @Injectable({
   providedIn: 'root'
@@ -14,10 +15,10 @@ export class SpotifyService {
   private redirect_uri = 'https://v-ibing.herokuapp.com/name-input';
   stateKey = 'spotify_auth_state';
 
-  constructor(private http: HttpClient) { }
+  constructor(private http: HttpClient, private router: Router) { }
 
   generateRandomString(length:number) {
-    var text = '';
+    var text = ''; 
     var possible = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
 
     for (var i = 0; i < length; i++) {
@@ -58,7 +59,8 @@ export class SpotifyService {
     var storedState = localStorage.getItem(this.stateKey);
 
     if (access_token && (state == null || state !== storedState)) {
-      alert("There was an error during authentication");
+      // alert("There was an error during authentication");
+      this.router.navigate(['/error']);
     } else {
       localStorage.removeItem(this.stateKey);
       return access_token;
@@ -69,21 +71,8 @@ export class SpotifyService {
     const headers = new HttpHeaders({
       'Authorization' : `Bearer ${token}`
     });
-
     return this.http.get(`${this.baseUrl}/me`, {headers});
   }
-
-  // login() {
-  //   const authorizationTokenUrl = `https://accounts.spotify.com/api/token`;
-  //   const body = 'grant_type=client_credentials';
-  //   return this.http.post(authorizationTokenUrl, body, {
-  //       headers: new HttpHeaders({
-  //           Authorization:
-  //               'Basic  ' + btoa(this.client_id + ':' + this.client_secret),
-  //           'Content-Type': 'application/x-www-form-urlencoded;',
-  //       }),
-  //   });
-  // }
 
   searchMusic(str:string, type:string ,token:string): Observable<any> {
     const headers = new HttpHeaders({
@@ -110,7 +99,8 @@ export class SpotifyService {
     const headers = new HttpHeaders({
       'Authorization' : `Bearer ${token}`
     });
-    return this.http.post(`${url}/playlists`, {name: name}, {headers});
+    let description = 'vibe created using v-ibing.herokuapp.com';
+    return this.http.post(`${url}/playlists`, {name: name, description: description}, {headers});
   }
 
   addToPlaylist(playlistId:string, token:string, uris:Array<any>) {

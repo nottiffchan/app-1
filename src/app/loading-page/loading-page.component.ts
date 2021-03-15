@@ -51,12 +51,10 @@ export class LoadingPageComponent implements OnInit {
 
   createPlaylist() {
     this.spotifySrv.getCurrUser(this.token).subscribe((res:any) => {
-      console.log(res)
       this.currUser = res;
 
       let playlistName = `vibing with ${this.firstname} and ${this.secondname}`;
       this.spotifySrv.createPlaylist(playlistName, this.token, this.currUser.href).subscribe((res:any) => {
-        console.log("here here", res)
         this.playlistId = res.id;
 
         this.getTracks();
@@ -76,7 +74,6 @@ export class LoadingPageComponent implements OnInit {
   }
 
   addTracksToPlaylist() {
-    console.log("adding tracks")
     this.spotifySrv.addToPlaylist(this.playlistId, this.token, this.uris).subscribe(
       res => {
         setTimeout(() => {
