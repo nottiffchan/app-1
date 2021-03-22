@@ -62,7 +62,8 @@ export class SpotifyService {
     console.log("state!", state)
     console.log("stored state!", storedState)
 
-    if (access_token && (state == null || state !== storedState)) {
+    // if (access_token && (state == null || state !== storedState)) {
+    if (access_token && state == null) {
       // alert("There was an error during authentication");
       this.router.navigate(['/error']);
     } else {
