@@ -58,6 +58,10 @@ export class SpotifyService {
     var state = params.state;
     var storedState = localStorage.getItem(this.stateKey);
 
+    console.log("access token!", access_token)
+    console.log("state!", state)
+    console.log("stored state!", storedState)
+
     if (access_token && (state == null || state !== storedState)) {
       // alert("There was an error during authentication");
       this.router.navigate(['/error']);
